@@ -1,8 +1,8 @@
-## Installation Linux
+# Installation Linux
 Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso
 
 
-###Création de la machine virtuelle avec VMWare Workstation Pro 12.5.0
+##Création de la machine virtuelle avec VMWare Workstation Pro 12.5.0
 >1.1. File -> New Virtual Machine...</br>
 >1.2.  Custom -> Next</br>
 >1.3.  Workstation 12.0 -> Next</br>
@@ -19,7 +19,7 @@ Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: htt
 >1.14. Set a disk name -> Next</br>
 
 
-###Installation de Debian
+##Installation de Debian
 >1.1. Edit virtual machine settings -> CD/DVD -> Use ISO image file -> Select ISO -> OK</br>
 >1.2. Power on this virtual machine</br>
 >1.3. Select ''Install''</br>
@@ -51,24 +51,24 @@ Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: htt
 >1.29. Continue</br>
 >1.30. Shutdown the virtual machine and remove the CD/DVD, printer</br>
 
-## Install SSH
+# Install SSH
 1. su and write the root password's
 2. apt-get install openssh
 3. apt-get install openssh-server
 4. exit
 
-## Install SUDO
+# Install SUDO
 1. su and write the root password's
 2. apt-get install sudo
 2. nano /etc/sudoers and add your local user like root
 3. exit
 
-## Install Nginx
+# Install Nginx
 1. sudo apt-get update (update apt)
 2. sudo apt-get install nginx
 3.  systemctl status nginx (controll if active (running))
 
-## Install PHP
+# Install PHP
 1. sudo apt-get install php-fpm
 2. cd /etc/nginx/sites-available/
 3. sudo nano default
@@ -87,7 +87,7 @@ Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: htt
 
 5. sudo systemctl restart nginx
 
-## Install MariaDB
+# Install MariaDB
 1.  sudo apt-get install mariadb-server
 2.  sudo nano 50-server.cnf
 3. Edit character-set-server = utf8 and comment the line collation-server
@@ -101,7 +101,7 @@ Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: htt
 11. "Reload privilege tables now?" y
 12. mysql -u root -p
 
-## User directories isolation
+# User directories isolation
 1. ```sudo adduser username and after write password```
 2. ```sudo mkdir /srv/data-user/newuser```
 3. ```sudo ln -s /srv/data-user/"user" /home/"user"/www```
