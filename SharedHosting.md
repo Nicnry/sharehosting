@@ -101,7 +101,7 @@
 ---
 
 # Install MariaDB
-1.  ```bash sudo apt-get install mariadb-server```
+1.  ```sudo apt-get install mariadb-server```
 2.  sudo nano 50-server.cnf
 3. Edit character-set-server = utf8 and comment the line collation-server
 4. sudo systemctl restart mariadb
@@ -117,20 +117,22 @@
 ---
 
 # User directories isolation
-1. ```bash sudo adduser username and after write password```
-2. ```bash sudo mkdir /srv/data-user/newuser```
-3. ```bash sudo ln -s /srv/data-user/"user" /home/"user"/www```
-4. ```bash sudo chown .vR "user" /srv/data-user/"user"```
-5. ```bash sudo chgrp -R nginx /srv/data.user/user```
-6. ```bash sudo chmod 770 /srv/data-user/"user"```
-7. ```bash sudo chmod 770 /home/"user"```
+1. ```sudo adduser username and after write password```
+2. ```sudo mkdir /srv/data-user/newuser```
+3. ```sudo ln -s /srv/data-user/"user" /home/"user"/www```
+4. ```sudo chown .vR "user" /srv/data-user/"user"```
+5. ```sudo chgrp -R nginx /srv/data.user/user```
+6. ```sudo chmod 770 /srv/data-user/"user"```
+7. ```sudo chmod 770 /home/"user"```
 8. Connect to mariaDB and creat the new user with root
-9. ```bash sudo mysql -u root -p```
-10. ```bash CREATE USER 'NEW_USER_NAME' IDENTIFIED BY 'PASSWORD'; ```
-11. ```bash CREATE DATABASE nameofthenewdb;```
-12. ```bash GRANT ALL PRIVILEGES ON nomdevotredb.* TO 'user'@'%'WITH GRANT OPTION;```
+9. ```sudo mysql -u root -p```
+10. ```sql 
+CREATE USER 'NEW_USER_NAME' IDENTIFIED BY 'PASSWORD'; 
+```
+11. ```CREATE DATABASE nameofthenewdb;```
+12. ```GRANT ALL PRIVILEGES ON nomdevotredb.* TO 'user'@'%'WITH GRANT OPTION;```
 13. Disconnect from the mariaDB and reconnect with the new user
-14. ```bash mysql -u NEW_USER_NAME -p ```
+14. ```mysql -u NEW_USER_NAME -p ```
 15. creat a file in /etc/nginx/sites-available
 
 ```nginx
@@ -153,9 +155,9 @@ server {
 ```
 16. creat a symboling link from sites-available to sites-enabled
 17. cd /etc/nginx/sites-enabled/
-17. ```bash sudo ln -s /etc/nginx/sites-available/tutu.conf tutu.conf```
+17. ```sudo ln -s /etc/nginx/sites-available/tutu.conf tutu.conf```
 18. cd /etc/php/7.0/fpm/pool.d
-19. ```bash sudo nano tutu.conf```
+19. ```sudo nano tutu.conf```
 20. 
 ```php [tutu]
     user = tutu
