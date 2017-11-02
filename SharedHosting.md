@@ -85,7 +85,7 @@ Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: htt
         #       fastcgi_pass 127.0.0.1:9000;
        }```
 
-5. sudo systemctl restart nginx
+sudo systemctl restart nginx
 
 # Install MariaDB
 1.  sudo apt-get install mariadb-server
