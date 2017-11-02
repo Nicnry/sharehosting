@@ -172,7 +172,8 @@ server {
 ```
 21. sudo nano /etc/nginx/sites-available/default
 22. 
-```server{
+```
+server{
 	listen 80 default_server;
 	server_name _;;
 	return 444;
