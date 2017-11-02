@@ -83,18 +83,19 @@
 3. sudo nano default
 4. Remove the comments like : 
 
-```#pass PHP scripts to FastCGI server;
+```bash
+# pass PHP scripts to FastCGI server;
 #
         location ~ \.php$ {
         include snippets/fastcgi-php.conf;
         #
-                # With php-fpm (or other unix sockets):
-                fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
-        #       # With php-cgi (or other tcp sockets):
-        #       fastcgi_pass 127.0.0.1:9000;
-       }```
+        # With php-fpm (or other unix sockets):
+        fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+#       # With php-cgi (or other tcp sockets):
+#       fastcgi_pass 127.0.0.1:9000;
+} ```
 
-sudo systemctl restart nginx
+5. sudo systemctl restart nginx
 
 ---
 
@@ -131,7 +132,7 @@ sudo systemctl restart nginx
 14. ```mysql -u NEW_USER_NAME -p ```
 15. creat a file in /etc/nginx/sites-available
 
-```conf
+```nginx
 server {
         listen 80;
         root /srv/data-user/"user";
