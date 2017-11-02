@@ -16,7 +16,7 @@ Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: htt
 >1.12. Create a new virtual disk -> Next</br>
 >1.13. Size disk 20 GB, Store virtual disk as a single file -> Next</br>
 >1.14. Set a disk name -> Next</br>
-
+<hr>
 ###Installation de Debian
 >1.1. Edit virtual machine settings -> CD/DVD -> Use ISO image file -> Select ISO -> OK</br>
 >1.2. Power on this virtual machine</br>
