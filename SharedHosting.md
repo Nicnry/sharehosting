@@ -171,6 +171,6 @@ server {
     chdir = /
 ```
 21. Restart the services
-22. sudo systemctl restart nginx.service  
-23. systemctl restart php7.0-fpm.service  
-24. systemctl restart mysql.service 
+22. ```sudo systemctl restart nginx.service```
+23. ```systemctl restart php7.0-fpm.service```
+24. ```systemctl restart mysql.service```
