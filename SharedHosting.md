@@ -140,7 +140,7 @@ server {
         index index.php index.html index.htm;
         server_name www."user".ch;
         location / {
-                try_files $uri $uri/ /index.html;
+                try_files $uri $uri/ /index.php;
         }
         location ~ \.php$ {
                 try_files $uri =404;
@@ -170,6 +170,15 @@ server {
     pm.max_spare_servers = 3
     chdir = /
 ```
+21. sudo nano /etc/nginx/sites-available/default
+22. 
+```server{
+	listen 80 default_server;
+	server_name _;;
+	return 444;
+}
+```
+23. sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default 
 21. Restart the services
 22. ```sudo systemctl restart nginx.service```
 23. ```systemctl restart php7.0-fpm.service```
