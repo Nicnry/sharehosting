@@ -1,53 +1,53 @@
 ## Installation Linux
 Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso
+<hr>
+###Création de la machine virtuelle avec VMWare Workstation Pro 12.5.0
+>1.1. File -> New Virtual Machine...</br></br>
+>1.2.  Custom -> Next</br>
+>1.3.  Workstation 12.0 -> Next</br>
+>1.4. I will install the operating system later -> Next</br>
+>1.5.  Linux -> Debian 8.x 64-bit -> Next</br>
+>1.6. Set a Virtual machine name and a location -> Next</br>
+>1.7. 1 processor, 1 core -> Next</br>
+>1.8. 1024 MB RAM -> Next</br>
+>1.9. Use network address translation (NAT) -> Next</br>
+>1.10. LSI Logic -> Next</br>
+>1.11. SCSI -> Next</br>
+>1.12. Create a new virtual disk -> Next</br>
+>1.13. Size disk 20 GB, Store virtual disk as a single file -> Next</br>
+>1.14. Set a disk name -> Next</br>
 
-> ###Création de la machine virtuelle avec VMWare Workstation Pro 12.5.0
->>1.1. File -> New Virtual Machine...</br>
->>1.2.	Custom -> Next
->>1.3.	Workstation 12.0 -> Next
->>1.4. I will install the operating system later -> Next
->>1.5.	Linux -> Debian 8.x 64-bit -> Next
->>1.6. Set a Virtual machine name and a location -> Next
->>1.7. 1 processor, 1 core -> Next
->>1.8. 1024 MB RAM -> Next
->>1.9. Use network address translation (NAT) -> Next
->>1.10. LSI Logic -> Next
->>1.11. SCSI -> Next
->>1.12. Create a new virtual disk -> Next
->>1.13. Size disk 20 GB, Store virtual disk as a single file -> Next
->>1.14. Set a disk name -> Next
-
->###Installation de Debian
->>1.1. Edit virtual machine settings -> CD/DVD -> Use ISO image file -> Select ISO -> OK
->>1.2. Power on this virtual machine
->>1.3. Select ''Install''
->>1.4. Select English 
->>1.5. Select other -> Europe -> Switzerland
->>1.6. Select United States
->>1.7. Select Swiss French
->>1.8. Set a hostname
->>1.9. No domain name
->>1.10. Set a password
->>1.11. Confirm password
->>1.12. Set a full name 
->>1.13. Set a username
->>1.14. Set a password
->>1.15. Confirm Password
->>1.16. Select use entire disk
->>1.17.  Select the disk
->>1.18. All files in one partition
->>1.19. Finish
->>1.20. Yes
->>1.21. No
->>1.22. Switzerland
->>1.23. ftp.ch.debian.org
->>1.24. Continue
->>1.25. No
->>1.26. Unselect Debian desktop environement, print server
->>1.27. Yes
->>1.28. /dev/sda
->>1.29. Continue
->>1.30. Shutdown the virtual machine and remove the CD/DVD, printer
+###Installation de Debian
+>1.1. Edit virtual machine settings -> CD/DVD -> Use ISO image file -> Select ISO -> OK</br>
+>1.2. Power on this virtual machine</br>
+>1.3. Select ''Install''</br>
+>1.4. Select English </br>
+>1.5. Select other -> Europe -> Switzerland</br>
+>1.6. Select United States</br>
+>1.7. Select Swiss French</br>
+>1.8. Set a hostname</br>
+>1.9. No domain name</br>
+>1.10. Set a password</br>
+>1.11. Confirm password</br>
+>1.12. Set a full name </br>
+>1.13. Set a username</br>
+>1.14. Set a password</br>
+>1.15. Confirm Password</br>
+>1.16. Select use entire disk</br>
+>1.17.  Select the disk</br>
+>1.18. All files in one partition</br>
+>1.19. Finish</br>
+>1.20. Yes</br>
+>1.21. No</br>
+>1.22. Switzerland</br>
+>1.23. ftp.ch.debian.org</br>
+>1.24. Continue</br>
+>1.25. No</br>
+>1.26. Unselect Debian desktop environement, print server</br>
+>1.27. Yes</br>
+>1.28. /dev/sda</br>
+>1.29. Continue</br>
+>1.30. Shutdown the virtual machine and remove the CD/DVD, printer</br>
 
 ## Install SSH
 1. su and write the root password's
@@ -127,10 +127,10 @@ server {
         }
         location ~ \.php$ {
                 try_files $uri =404;
-			    fastcgi_index index.php;
-			    fastcgi_pass unix:/var/run/php7.0-fpm-"user".sock;
-			    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-			    include fastcgi_params;
+                fastcgi_index index.php;
+                fastcgi_pass unix:/var/run/php7.0-fpm-"user".sock;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                include fastcgi_params;
         }
     }
 ```
