@@ -2,7 +2,7 @@
 Téléchargement de l'image iso de Linux Debian 9.1.0 à l'adresse suivante: https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso
 <hr>
 ###Création de la machine virtuelle avec VMWare Workstation Pro 12.5.0
->1.1. File -> New Virtual Machine...</br></br>
+>1.1. File -> New Virtual Machine...</br>
 >1.2.  Custom -> Next</br>
 >1.3.  Workstation 12.0 -> Next</br>
 >1.4. I will install the operating system later -> Next</br>
