@@ -126,9 +126,7 @@
 7. ```sudo chmod 770 /home/"user"```
 8. Connect to mariaDB and creat the new user with root
 9. ```sudo mysql -u root -p```
-10. ```sql 
-CREATE USER 'NEW_USER_NAME' IDENTIFIED BY 'PASSWORD'; 
-```
+10. ```CREATE USER 'NEW_USER_NAME' IDENTIFIED BY 'PASSWORD'; ```
 11. ```CREATE DATABASE nameofthenewdb;```
 12. ```GRANT ALL PRIVILEGES ON nomdevotredb.* TO 'user'@'%'WITH GRANT OPTION;```
 13. Disconnect from the mariaDB and reconnect with the new user
