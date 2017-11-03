@@ -72,7 +72,7 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 # Install Nginx
 1. ```sudo apt-get update```
 2. ```sudo apt-get install nginx```
-3. ```systemctl status nginx``` and controll if is running.
+3. ```sudo systemctl status nginx``` and controll if is running.
 
 ---
 
@@ -82,7 +82,8 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 3. ```sudo nano default```
 4. Remove the comments like : 
 
-```#pass PHP scripts to FastCGI server;
+```bash
+#pass PHP scripts to FastCGI server;
 #
         location ~ \.php$ {
         include snippets/fastcgi-php.conf;
@@ -91,7 +92,8 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
                 fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
         #       # With php-cgi (or other tcp sockets):
         #       fastcgi_pass 127.0.0.1:9000;
-       }```
+       }
+```
 
 5. ```sudo systemctl restart nginx```
 
