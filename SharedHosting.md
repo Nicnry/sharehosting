@@ -129,7 +129,7 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 12. ```GRANT ALL PRIVILEGES ON databasename.* TO 'user'@'%'WITH GRANT OPTION;```
 13. Disconnect from the mariaDB and reconnect with the new user.
 14. ```mysql -u "user" -p ```
-15. Create a file in /etc/nginx/sites-available.
+15. Create a file in /etc/nginx/sites-available. witn "user".conf as name
 
 ```nginx
 server {
