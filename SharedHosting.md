@@ -132,7 +132,7 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 14. ```mysql -u NEW_USER_NAME -p ```
 15. Create a file in /etc/nginx/sites-available.
 
-```conf
+```nginx
 server {
         listen 80;
         root /srv/data-user/"user";
