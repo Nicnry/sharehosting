@@ -116,9 +116,9 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 
 # User directories isolation
 1.  ```sudo adduser username and after write password```
-2.  ```sudo mkdir /srv/data-user/newuser```
+2.  ```sudo mkdir /srv/data-user/"user"```
 3.  ```sudo ln -s /srv/data-user/"user" /home/"user"/www```
-4.  ```sudo chown .vR "user" /srv/data-user/"user"```
+4.  ```sudo chown -vR "user" /srv/data-user/"user"```
 5.  ```sudo chgrp -R nginx /srv/data.user/user```
 6.  ```sudo chmod 770 /srv/data-user/"user"```
 7.  ```sudo chmod 770 /home/"user"```
