@@ -100,7 +100,7 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 
 # Install MariaDB
 1.  ```sudo apt-get install mariadb-server```
-2.  ```sudo nano 50-server.cnf```
+2.  ```sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf```
 3.  Edit ```character-set-server = utf8``` and comment the line ```collation-server```
 4.  ```sudo systemctl restart mariadb```
 5.  ```su root``` (enter password)
