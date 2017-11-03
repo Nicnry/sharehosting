@@ -55,9 +55,8 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 
 # Install SSH
 1. `su` and write the root password's.
-2. ```apt-get install openssh```
-3. ```apt-get install openssh-server```
-4. ```exit```
+2. ```apt-get install openssh-server```
+3. ```exit```
 
 ---
 
