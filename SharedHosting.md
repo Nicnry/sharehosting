@@ -119,16 +119,16 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 2.  ```sudo mkdir /srv/data-user/"user"```
 3.  ```sudo ln -s /srv/data-user/"user" /home/"user"/www```
 4.  ```sudo chown -vR "user" /srv/data-user/"user"```
-5.  ```sudo chgrp -R nginx /srv/data.user/user```
+5.  ```sudo chgrp -R www-data /srv/data-user/"user"```
 6.  ```sudo chmod 770 /srv/data-user/"user"```
 7.  ```sudo chmod 770 /home/"user"```
 8.  Connect to mariaDB and create the new user with root.
 9.  ```sudo mysql -u root -p```
-10. ```CREATE USER 'NEW_USER_NAME' IDENTIFIED BY 'PASSWORD'; ```
+10. ```CREATE USER 'user' IDENTIFIED BY 'PASSWORD'; ```
 11. ```CREATE DATABASE nameofthenewdb;```
-12. ```GRANT ALL PRIVILEGES ON nomdevotredb.* TO 'user'@'%'WITH GRANT OPTION;```
+12. ```GRANT ALL PRIVILEGES ON databasename.* TO 'user'@'%'WITH GRANT OPTION;```
 13. Disconnect from the mariaDB and reconnect with the new user.
-14. ```mysql -u NEW_USER_NAME -p ```
+14. ```mysql -u "user" -p ```
 15. Create a file in /etc/nginx/sites-available.
 
 ```nginx
