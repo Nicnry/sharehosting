@@ -116,7 +116,7 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 
 # User directories isolation
 1.  ```sudo adduser username and after write password```
-2.  ```sudo mkdir /srv/data-user/"user"```
+2.  ```sudo mkdir -p /srv/data-user/"user"```
 3.  ```sudo ln -s /srv/data-user/"user" /home/"user"/www```
 4.  ```sudo chown -vR "user" /srv/data-user/"user"```
 5.  ```sudo chgrp -R www-data /srv/data-user/"user"```
@@ -129,7 +129,8 @@ Download the latest version of debian on this link: [https://www.debian.org/dist
 12. ```GRANT ALL PRIVILEGES ON databasename.* TO 'user'@'%'WITH GRANT OPTION;```
 13. Disconnect from the mariaDB and reconnect with the new user.
 14. ```mysql -u "user" -p ```
-15. Create a file in /etc/nginx/sites-available. witn "user".conf as name
+15. Create a file in /etc/nginx/sites-available/ with "user".conf as name
+16. ```sudo nano /etc/nginx/sites-available/"user".conf
 
 ```nginx
 server {
