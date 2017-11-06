@@ -174,7 +174,8 @@ server {
 22. ```sudo systemctl restart nginx.service``` 
 23. ```sudo systemctl restart php7.0-fpm.service```
 24. ```sudo systemctl restart mysql.service```
-```
+
+---
 
 #Script create user + domain
 
