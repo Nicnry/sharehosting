@@ -181,7 +181,7 @@ server {
 
         #!/bin/bash
 
-        ###### CREATE USER
+        ###### Create New User
         echo "-----------Script to create a website for an user---------------"
 
         echo "Insert the user name"
@@ -197,12 +197,11 @@ server {
 
 
 
-        ###### CREATE USER DATABASE
+        ###### Create User Database
         echo "Name of the MariaDB's user: "$userName
         echo "Insert a new password for your MariaDB's user"
         read -s answer
         userDBpassword=$answer
-
 
         echo "Insert the admin password for MariaDB: "
         read -s  answer
@@ -217,6 +216,7 @@ server {
         EOF
         echo "The new  MariaDB '$userName' has been created."
 
+        ###### Set config file
         touch /etc/nginx/sites-available/$userName.conf
         echo "server {
                 listen 80;
@@ -236,10 +236,11 @@ server {
             }
         " > /etc/nginx/sites-available/$userName.conf
         echo "File /etc/nginx/sites-available/$userName.conf created."
-        ###### LIEN SYMBOLIQUE (activer le site)
+        
+        ###### Symbolic Link (activer le site)
         ln -s /etc/nginx/sites-available/$userName.conf /etc/nginx/sites-enabled/$userName.conf
 
-        ###### POOL PHP
+        ###### PHP Pool
         touch /etc/php/7.0/fpm/pool.d/$userName.conf
         echo "[$userName]
             user = $userName
@@ -257,7 +258,7 @@ server {
         echo "File /etc/php/7.0/fpm/pool.d/$userName.conf created."
 
         echo "Restarting service nginx/php7.0/mysql..."
-        ###### RESTART SERVICES
+        ###### Restart Services
         systemctl restart nginx.service
         systemctl restart php7.0-fpm.service
         systemctl restart mysql.service
