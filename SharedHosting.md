@@ -181,95 +181,10 @@ server {
 1. Connect as root. 
 1. Create a new script file.
 2. ```touch /root/newuser.bash```
-3. Copy the script below into the file with an editor (nano).
-4. ```nano /root/newuser.bash -> copy+paste the script below```
+3. Copy the script "newuser.bash" into the file /root/newuser.bash.
+4. ```nano /root/newuser.bash -> copy+paste the script "newuser.bash"```
 5. Run the script.
 6. ```bash /root/newuser.bash```
 7. Follow the instructions of the script.
 
-        #!/bin/bash
-
-        ###### Create New User
-        echo "-----------Script to create a website for an user---------------"
-
-        echo "Insert the user name"
-        read answer
-        userName=$answer
-        adduser $userName
-        mkdir -p /srv/data-user/$userName
-        ln -s /srv/data-user/$userName /home/$userName/www
-        chown -vR $userName /srv/data-user/$userName
-        chgrp -R www-data /srv/data-user/$userName
-        chmod 770 /srv/data-user/$userName
-        chmod 770 /home/$userName
-
-
-
-        ###### Create User Database
-        echo "Name of the MariaDB's user: "$userName
-        echo "Insert a new password for your MariaDB's user"
-        read -s answer
-        userDBpassword=$answer
-
-        echo "Insert the admin password for MariaDB: "
-        read -s  answer
-        adminPassword=$answer
-
-        mysql --user root --password=$adminPassword <<EOF
-        CREATE USER '$userName' IDENTIFIED BY '$userDBpassword';
-        CREATE DATABASE $userName;
-        GRANT ALL PRIVILEGES ON $userName.* TO '$userName'@'%';
-        flush privileges;
-        quit
-        EOF
-        echo "The new  MariaDB '$userName' has been created."
-
-        ###### Set config file
-        touch /etc/nginx/sites-available/$userName.conf
-        echo "server {
-                listen 80;
-                root /srv/data-user/$userName;
-                index index.php index.html index.htm;
-                server_name www.$userName.ch;
-                location / {
-                        try_files \$uri \$uri/ /index.html;
-                }
-                location ~ \.php$ {
-                        try_files \$uri =404;
-                        fastcgi_index index.php;
-                        fastcgi_pass unix:/var/run/php7.0-fpm-$userName.sock;
-                        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
-                        include fastcgi_params;
-                }
-            }
-        " > /etc/nginx/sites-available/$userName.conf
-        echo "File /etc/nginx/sites-available/$userName.conf created."
-        
-        ###### Symbolic Link (activer le site)
-        ln -s /etc/nginx/sites-available/$userName.conf /etc/nginx/sites-enabled/$userName.conf
-
-        ###### PHP Pool
-        touch /etc/php/7.0/fpm/pool.d/$userName.conf
-        echo "[$userName]
-            user = $userName
-            group = $userName
-            listen = /var/run/php7.0-fpm-$userName.sock
-            listen.owner = www-data
-            listen.group = www-data
-            pm = dynamic
-            pm.max_children = 5
-            pm.start_servers = 2
-            pm.min_spare_servers = 1
-            pm.max_spare_servers = 3
-            chdir = /
-        " > /etc/php/7.0/fpm/pool.d/$userName.conf
-        echo "File /etc/php/7.0/fpm/pool.d/$userName.conf created."
-
-        echo "Restarting service nginx/php7.0/mysql..."
-        ###### Restart Services
-        systemctl restart nginx.service
-        systemctl restart php7.0-fpm.service
-        systemctl restart mysql.service
-
-        echo "Your new user is created."
 ---
