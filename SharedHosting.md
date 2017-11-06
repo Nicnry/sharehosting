@@ -177,7 +177,7 @@ server {
 
 ---
 
-#Script create user + domain
+# Script create user + domain
 
         #!/bin/bash
 
@@ -263,3 +263,4 @@ server {
         systemctl restart mysql.service
 
         echo "Your new user is created."
+---
