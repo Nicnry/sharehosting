@@ -178,12 +178,15 @@ server {
 ---
 
 # Script create user + domain
-1. Create a new script file
+1. Connect as root. 
+1. Create a new script file.
 2. ```touch /root/newuser.bash```
-3. Copy the script below into the file with an editor
-4. ```nano /root/newuser.bash -> copy+paste the script```
-5. Run the script as root
+3. Copy the script below into the file with an editor (nano).
+4. ```nano /root/newuser.bash -> copy+paste the script below```
+5. Run the script.
 6. ```bash /root/newuser.bash```
+7. Follow the instructions of the script.
+
         #!/bin/bash
 
         ###### Create New User
